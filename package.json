@@ -1,0 +1,39 @@
+{
+  "name": "flutterflow-windows",
+  "version": "1.0.0",
+  "description": "FlutterFlow on Windows",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "repository": "https://github.com/eduhcastro/flutterflow-windows",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "eduhcastro",
+  "devDependencies": {
+    "electron": "^27.0.2"
+  },
+  "build": {
+    "productName": "FlutterFlow Windows",
+    "appId": "com.eduhcastro.flutterflowwindows",
+    "directories": {
+      "buildResources": "./"
+    },
+    "win": {
+      "asar": true,
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "installerIcon": "assets/icon.ico",
+      "installerHeaderIcon": "assets/icon.ico",
+      "deleteAppDataOnUninstall": true
+    }
+  }
+}
