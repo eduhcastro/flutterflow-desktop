@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, screen } = require('electron');
 const path = require('path');
 
 // Flag to track if it's the first window load
@@ -73,12 +73,26 @@ ipcMain.on('minimize-window', () => {
   }
 });
 
+
 ipcMain.on('maximize-window', () => {
   if (mainWindow) {
+    //const { height } = screen.getPrimaryDisplay().workAreaSize;
+
     if (mainWindow.isMaximized()) {
       mainWindow.unmaximize();
     } else {
       mainWindow.maximize();
     }
   }
+});
+
+ipcMain.on('cleancache-all', async () => {
+  await mainWindow.webContents.session.clearCache();
+  await mainWindow.webContents.session.clearStorageData();
+  app.relaunch();
+  app.exit();
+});
+
+ipcMain.on('refresh-window', () => {
+  mainWindow.reload()
 });

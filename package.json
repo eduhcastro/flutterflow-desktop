@@ -1,6 +1,6 @@
 {
   "name": "flutterflow-windows",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "FlutterFlow on Windows",
   "main": "main.js",
   "scripts": {
@@ -10,10 +10,8 @@
   "repository": "https://github.com/eduhcastro/flutterflow-windows",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "FlutterFlow",
+    "Windows"
   ],
   "author": "eduhcastro",
   "devDependencies": {
